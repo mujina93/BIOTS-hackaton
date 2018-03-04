@@ -11,6 +11,8 @@ Documentation for solidity.
 
 ### [Etherisc](https://etherisc.com/)
 Smart contract examples - implementation of a Token, and of a Token Staking system (used for insurance in this case).
+
 [Token Payments](https://docs.google.com/document/d/1mRRQIuJlebQeAKBxjgtrQcqi39N9wCyDuU8neo-u31U/edit?usp=sharing)
+
 [Token Staking](https://docs.google.com/document/d/1SY-3CJSdAlnXx_uLHzCpW_NOTYmBWYS2eIW3ST0Qu_A/edit?usp=sharing)
 
