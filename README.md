@@ -63,7 +63,7 @@ ipfs daemon
 ```
 and anybody will be able to access your contents until your daemon is running.
 
-### [Other solutions]
+### Other solutions
 Other possible alternatives are:
 
 [Storj](https://storj.io/)
@@ -72,4 +72,51 @@ Other possible alternatives are:
 
 [Sia](https://sia.tech/)
 
-## Security
+## Smart Contract Security
+
+### Common attack vectors
+3 common possible attack vectors and solutions to avoid hacks:
+
+Name | Problem | Solution | Example
+-----|---------|----------|--------
+**Transaction order** | No guarantees that the transactions containing the calls to the smart contract's methods will be executed in the order in which they were issued. | Use a variable to represent the state of the contract (counters, semaphores) and use it to make checks | Blockchain e-commerce
+**Reentrancy** | [Problems when a contract's methods call other contracts' methods, and there is no state check or there is  an unsafe ordering of the calls](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4) | Use states, or avoid unsafe ordering on the calls | ATM withrawal
+**Frontrunning** | When I have to send a solution to a puzzle for which I can get a reward, it can happen: 1. A malicious actor reads the solution from the public transaction that I broadcast, and sends the same solution before mine gets accepted; 2. A miner might decide not to include your transaction, and instead include theirs (using your solution) | Blinded commitments: submit the hash of (your solution + your address), and wait (enough to be sure to avoid attack vector #2). Then you reveal the solution, and the system can check that you actually had got it right, and reward you. | PoW puzzle game
+
+### Further readings
+
+[Security in Smart Contracts](https://medium.com/@matthewdif/mechanism-design-security-in-smart-contracts-87f08555b38b)
+
+[Evolution of Smart Contract Security](https://blog.zeppelinos.org/evolution-of-smart-contract-security-in-the-ethereum-ecosystem/)
+
+[Protect from Overflows](https://ethereumdev.io/safemath-protect-overflows/)
+
+[Error Handling](https://media.consensys.net/when-to-use-revert-assert-and-require-in-solidity-61fb2c0e5a57)
+
+[Audits and Best Practices](https://medium.com/@yury.sannikov/solidity-smart-contract-audit-and-best-practices-2e80ce3edf68)
+
+### [Truffle](http://truffleframework.com/docs/)
+Development environment, testing framework and asset pipeline for Ethereum. It allows you to build, compile, link, deploy smart contracts, build automatic tests, pipelines, and much more!
+
+### [Securify](https://securify.ch/)
+System for auditing your contracts.
+
+## [AI prediction and smart contracts](https://github.com/daviddao/prediction-market-tutorial)
+Cool AI-powered prediction dapp, in which people can vote through a smart contract on an image being classified as dog or cat. A deep neural network performs then the classification, and people win or lose their bets!.
+
+The appl uses:
+* [parity](https://www.parity.io/)
+* [npm](https://nodejs.org/en/)
+* [webpack](https://webpack.js.org/)
+* [deeplearnjs](https://deeplearnjs.org/)
+
+For the lecture, see: [YouTube video](https://youtu.be/ZgzWQEEw0Zc)
+
+## [IoT + Blockchain](https://youtu.be/NKySyEDIo_U)
+Lecture by Ambrosus on IoT and Blockchain.
+
+## [Hackaton projects](https://github.com/ETHBiots2018)
+List of all the repositories for all the submitted projects tackling the assigned challenges!
+
+### [My team's submission](https://github.com/ETHBiots2018/Favelinha)
+Webapp that allows you to create ballots and vote! Together with this, we designed a complex system of incentives that should make use of 4 (possibly 5) different tokens, and should be the base for a political social network in which people can make ballots, proposals, can earn reputation as a citizen or as a politician, and can vote!
